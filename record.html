@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Record</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+</head>
+<body>
+<!--navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <a class="navbar-brand"><font color="#ffee58">Edu</font><font color="#e1f5fe">More</font></a>
+  
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:3000/home"><font color="white">Home</font></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000/record"><font color="white">Record</font></a>
+      </li>
+      
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000/applied"><font color="white">Applied</font></a>
+      </li>
+      <li class="nav-item ">
+          <a class="nav-link" href="http://localhost:3000/profile"><font color="white">Profile</font></a>
+        </li>
+      
+    </ul>
+    
+  </div>
+  <form class="form-inline">
+    
+    <button class="btn btn-outline-success my-2 my-sm-0"  type="submit"><a href="http://localhost:3000/logout" style="color:rgb(34, 158, 34);  text-decoration: none;">Logout</a> </button>
+  </form>
+</nav>
+<!-- nav ends-->
+<br>
+<br>
+	<div class="container"style="width: 450px;">
+   <div class="col-center"style="background:#e0e0e0  ">
+         <form action="/record" method="POST">
+          <br>
+          <header style="font-size: 30px"><b><center>Your Record</center></b></header>
+          <br>
+          <div class="container">
+            <div class="form-group ">
+                <label for="college">College Name</label>
+                <input type="text" name="college" class="form-control" id="college"placeholder="Enter College Name">
+                
+              </div>
+              <div class="form-group ">
+                <label for="date">Date</label>
+                <input type="date" name="date" class="form-control" id="date"placeholder="Select Exam Date">
+                
+              </div>
+             
+             
+               <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+           </div>    
+        </form>
+        <br>
+        <br>
+       </div>
+  </div>
+
+
+
+
+</body>
+</html>

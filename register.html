@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTER</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    
+</head>
+<style>
+	body, html {
+  height: 100%;
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("./img/b2.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.col-md-s4{
+ background:#e0e0e0;
+ height:650px; 
+}
+</style>
+
+<body >
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"style="font-family: 'Gloria Hallelujah"></a>
+  
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><font color="#ffee58">Edu</font><font color="#e1f5fe">More</font></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000">LOGIN</a>
+      </li>
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+
+<div class="bg">
+	<br>
+	<br>
+<!--left info-->
+<div class="container">
+     <div class="row">
+       <div class="col-md-8">
+         <p style="font-size: 97px;font-family: 'Gloria Hallelujah';"><font color="#ffee58">Edu</font><font color="#e1f5fe">More</font></p>
+         <p style="font-size:50px;color:white">Register yourself and get ready to manage your college applications. </p>
+         
+       </div>
+
+
+       <!--login form-->
+       <div class="col-md-4"style="background: #e0e0e0">
+         <form name="myForm" action="/register" onsubmit="return validateForm()" method="POST">
+          <br>
+          <header style="font-size: 30px"><b><center>REGISTER</center></b></header>
+          <br>
+          <br>
+          <div class="container">
+            <div class="form-group ">
+                <label for="name">Username</label>
+                <input type="name" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Username" >
+                
+              </div>
+              <div class="form-group ">
+                <label for="email">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" >
+                
+              </div>
+             <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" class="form-control" id="password" placeholder="password"onkeyup="myFunction()">
+             </div>
+             <div class="form-group">
+              <label for="password">Confirm Password</label>
+              <input type="password" id="confirm_password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Confirm Password"onkeyup="myFunction()">
+              <br>
+             
+               <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
+               <br>
+           </div>    
+        </form>
+       </div>
+     </div>
+   </div>
+</div>
+
+
+  <script>
+    
+    function validateForm() {
+  
+      var name = document.forms["myForm"]["name"].value;
+      var email = document.forms["myForm"]["email"].value;
+      var password = document.forms["myForm"]["password"].value;
+      
+//name verify
+    if (name == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+    re = /^\w+$/;
+      if(!re.test(name)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      return false;
+    }
+
+//email verify
+  if (email == ""){ 
+        alert("Please enter a valid e-mail address."); 
+        return false; 
+    } 
+   
+    if (email.indexOf("@", 0) < 0) { 
+       alert("Please enter a valid e-mail address."); 
+        return false; 
+    } 
+   
+    if (email.indexOf(".", 0) < 0){ 
+       alert("Please enter a valid e-mail address."); 
+        return false; 
+    } 
+
+    //password verify
+  if (password == "") {
+    alert("password must be filled out");
+    return false;
+  }
+      if(password.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        return false;
+      }
+      if(password === name) {
+        alert("Error: Password must be different from Username!");
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(password)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(password)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(password)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        return false;
+      }
+  
+}
+  
+  //prevent copy paste in confirm_password
+ 
+
+  window.onload = function() {
+ const confirm_password = document.getElementById('confirm_password');
+ confirm_password.onpaste = function(e) {
+   e.preventDefault();
+ }
+}
+  
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    
+</head>
+<style>
+	body, html {
+  height: 100%;
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("./img/b2.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.col-md-s4{
+ background:#e0e0e0;
+ height:650px; 
+}
+</style>
+
+<body >
+  <!--navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"style="font-family: 'Gloria Hallelujah"></a>
+  
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><font color="#ffee58">Edu</font><font color="#e1f5fe">More</font></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000/register">SIGN UP</a>
+      </li>
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+
+<div class="bg">
+	<br>
+	<br>
+<!--left info-->
+<div class="container">
+     <div class="row">
+       <div class="col-md-8">
+         <p style="font-size: 97px;font-family: 'Gloria Hallelujah'"><font color="#ffee58">Edu</font><font color="#e1f5fe">More</font></p>
+         <p style="font-size:50px;color:white">A complete list of colleges and its  details.Manage all your college applications. </p>
+         
+       </div>
+
+
+       <!--login form-->
+       <div class="col-md-4"style="background: #e0e0e0">
+         <form action="/login" method="POST">
+          <br>
+          <header style="font-size: 30px"><b><center>LOGIN</center></b></header>
+          <br>
+          <br>
+          <div class="container">
+              <div class="form-group ">
+                <label for="email">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                
+              </div>
+             <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" class="form-control" id="password" placeholder="password">
+             </div>
+             <div class="form-group form-check">
+               <input type="checkbox" class="form-check-input" id="exampleCheck1">
+               <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+             </div>
+             
+               <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
+               <br>
+               <br>
+           </div>    
+        </form>
+       </div>
+     </div>
+   </div>
+</div>
+</body>
+</html>

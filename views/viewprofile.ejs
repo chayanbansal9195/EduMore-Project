@@ -1,0 +1,162 @@
+<%include header %>
+<style>
+  label {
+    color: blueviolet;
+  }
+  ul {
+    color: red;
+    
+  }
+  h5 {
+    padding: 10px;
+    margin-left: 60px;
+  }
+  .item1{
+    text-align: center
+  }
+  img {
+  border-radius: 50%;
+}
+
+
+</style>
+<title>Profile</title>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+  crossorigin="anonymous"
+/>
+
+<!--Import Google Icon Font-->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+  crossorigin="anonymous"
+/>
+<!--Import materialize.css-->
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="css/materialize.min.css"
+  media="screen,projection"
+/>
+
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand"
+    ><font color="#ffee58">Edu</font><font color="#e1f5fe">More</font></a
+  >
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:3000/home"
+          ><font color="white">Home</font></a
+        >
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000/record"
+          ><font color="white">Record</font></a
+        >
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000/applied"
+          ><font color="white">Applied</font></a
+        >
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000/profile"
+          ><font color="white">Profile</font></a
+        >
+      </li>
+    </ul>
+  </div>
+  <form class="form-inline">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+      <a
+        href="http://localhost:3000/logout"
+        style="color:rgb(34, 158, 34); text-decoration: none;"
+        >Logout</a
+      >
+    </button>
+  </form>
+</nav>
+<br /><br />
+<div class="container">
+  <a href="http://localhost:3000/profile_update" style="float:right">
+    <i class="fas fa-edit"></i>
+  </a>
+  <div class="row">
+    <% profile.forEach((profile)=>{ %>
+      
+    <div  class="col-md-6 img">
+      <div class="item1">
+          <img alt="User Pic" src="http://localhost:3000/images/<%=profile.profile_img%>" style="width:200px;height:200px;" class="img-circle img-responsive">
+          <p><%=profile.username%> </p>
+      </div>
+        
+    </div>
+    <div class="col-md-6 details">
+      <ul style="list-style:none">
+        <li>
+          <label for="email"
+            ><h3><i>Email</i></h3>
+          </label>
+          <br />
+          <%=profile.email%>
+          <hr />
+        </li>
+        <li>
+          <label for="fname"
+            ><h3><i>Firstname</i></h3>
+          </label>
+          <br />
+          <%=profile.fname%>
+          <hr />
+        </li>
+        <li>
+          <label for="lname"
+            ><h3><i>Lastname</i></h3>
+          </label>
+          <br />
+          <%=profile.lname%>
+          <hr />
+        </li>
+        <li>
+          <label for="age"
+            ><h3><i>Age</i></h3>
+          </label>
+          <br />
+          <%=profile.age%>
+          <hr />
+        </li>
+        <li>
+          <label for="city"
+            ><h3><i>City</i></h3>
+          </label>
+          <br />
+          <%=profile.city%>
+          <hr />
+        </li>
+        <li>
+          <label for="pnumber"
+            ><h3><i>Phone number</i></h3>
+          </label>
+          <br />
+          <%=profile.pnumber%>
+          <hr />
+        </li>
+      </ul>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+<%include footer %>
