@@ -89,19 +89,33 @@ app.get('/applied',auth,(req,res)=>{
 app.get('/profile',auth,(req,res)=>{
     var email = req.session.email
     db.query("SELECT * from user where email= '" + email + "'",(err,results)=>{
-        
         res.render('viewprofile',{
             profile:results
         })
-        
     }) 
 })
 
 //profile_update
 var profile_update = require('./routes/profile_update')
+
 app.route('/profile_update').post(profile_update)
+
 app.get('/profile_update',auth,(req,res)=>{
-    res.sendFile(__dirname+'/profile_update.html')
+    var email = req.session.email
+    db.query("SELECT * from user where email= '" +email + "'",(err,results)=>{
+        res.render('profile_update',{
+            profile:results
+        })
+    }) 
+})
+
+//uploadimage
+var uploadimage = require('./routes/uploadimage')
+
+app.route('/uploadimage').post(uploadimage)
+
+app.get('/uploadimage',auth,(req,res)=>{
+        res.render('uploadimage') 
 })
 
 

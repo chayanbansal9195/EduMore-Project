@@ -10,7 +10,7 @@ module.exports = function(req, res) {
   var confirm_password = req.body.confirm_password;
 
   var emailCheck = "SELECT * from user WHERE email = '"+email+"'"
-  db.query(emailCheck,(err,results,fields)=>{
+  db.query(emailCheck,(err,results)=>{
       if(err)
       console.log('error occured',err)
       else{

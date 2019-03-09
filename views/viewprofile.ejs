@@ -90,14 +90,19 @@
 </nav>
 <br /><br />
 <div class="container">
+    <% profile.forEach((profile)=>{ %>
   <a href="http://localhost:3000/profile_update" style="float:right">
     <i class="fas fa-edit"></i>
   </a>
   <div class="row">
-    <% profile.forEach((profile)=>{ %>
+    
       
     <div  class="col-md-6 img">
+        <a href="http://localhost:3000/uploadimage" >
+          <i class="fas fa-edit"></i>
+        </a>
       <div class="item1">
+          
           <img alt="User Pic" src="http://localhost:3000/images/<%=profile.profile_img%>" style="width:200px;height:200px;" class="img-circle img-responsive">
           <p><%=profile.username%> </p>
       </div>
